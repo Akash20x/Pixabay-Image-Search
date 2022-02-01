@@ -12,9 +12,11 @@ function App() {
   const [term, setTerm] = useState('');
   const [selectedImg, setSelectedImg] = useState(null);
 
+  const countimages = 100;
+
   useEffect(() => {
     fetch(
-      `https://pixabay.com/api/?key=25498619-147f47fea6f4aa08f6c22f598&q=${term}&image_type=photo`
+      `https://pixabay.com/api/?key=25498619-147f47fea6f4aa08f6c22f598&q=${term}&per_page=${countimages}&image_type=photo`
     )
       .then((res) => res.json())
       .then((data) => {
